@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+
+    }
+
+    body {
+
+        text-align: center;
+        align-items: center;
+    }
+
+    #d1 {
+        height: 10vh;
+        background-color: yellow;
+    }
+
+    #d2 {
+        height: 1vh;
+        background-color: wheat;
+
+    }
+
+    #s1 {
+        visibility: hidden;
+    }
+
+    #s2 {
+        visibility: hidden;
+
+    }
+
+    #t1 {
+        visibility: hidden;
+
+    }
+
+    #t2 {
+        visibility: hidden;
+
+    }
+</style>
+
+<body>
+
+    <div id="d1">
+        <button id="btn1" onclick="open1()"> Check Menu</button>
+        <button id="btn2" onclick="mytea()"> Vivew Price </button>
+        <button id="btn3" onclick="Qt()"> Add Quantity </button>
+        <button id="btn3" onclick="tam()"> Total Amount </button>
+
+
+    </div>
+
+    <div id="d2"></div>
+    <div id="d3"></div>
+    <div id="d4"></div>
+    <div id="d5"></div>
+
+
+    <select id="s1">
+        <option>--select--</option>
+        <option value="tea">tea</option>
+        <option value="cofee">cofee</option>
+    </select>
+
+    <select id="s2">
+        <option>--Price--</option>
+        <option id="p1" value="100">Tea Price :100</option>
+        <option value="200">Cofee Price :200</option>
+    </select>
+
+    <input type="text" id="t1" size="5">
+    <input type="text" id="t2" value="Total Amount : " size="20">
+
+    <script>
+        let x = document.getElementById("d2")
+        let y = document.getElementById("d3")
+        let z = document.getElementById("d4")
+        let xy = document.getElementById("d5")
+
+        let qt = document.getElementById("t1")
+        let amt = document.getElementById("t2")
+        let op1 = document.getElementById("s1")
+        let op2 = document.getElementById("s2")
+        var che = 0;
+        var che1 = 0;
+
+
+        function open1() {
+            if (true) {
+                x.innerHTML = "<style>#s1{visibility:visible;}</style>"
+                che = 1;
+            }
+
+        }
+        function mytea() {
+
+            if (che == 1) {
+                y.innerHTML = "<style>#s2{visibility:visible;}</style>"
+
+                che1 = 1;
+            }
+            else {
+                alert("First Select Menu..")
+            }
+
+
+        }
+        function Qt() {
+            if (che == 1) {
+                z.innerHTML = "<style>#t1{visibility:visible;}</style>"
+
+            }
+            else {
+                alert("First Select Price..")
+            }
+        }
+
+        function tam() {
+
+
+            if (che == 1) {
+                xy.innerHTML = "<style>#t2{visibility:visible;}</style>"
+                let a = parseInt(op2.value)
+                let b = parseInt(qt.value)
+                amt.value= "Total "+op1.value+" amt :"+a*b.toString();
+            }
+            else {
+                alert("First Select Quantity..")
+            }
+
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
